@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://mainmenu"]
+
+[ext_resource type="Script" path="res://scenes/MainMenu.gd" id="1"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Background" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.04, 0.04, 0.06, 1)
+
+[node name="Vignette" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -80.0
+offset_right = 120.0
+offset_bottom = 80.0
+alignment = BoxContainer.ALIGNMENT_CENTER
+
+[node name="Title" type="Label" parent="CanvasLayer/VBoxContainer"]
+text = "Mental Breakdown"
+horizontal_alignment = HorizontalAlignment.CENTER
+size_flags_horizontal = Control.SIZE_EXPAND_FILL
+size_flags_vertical = Control.SIZE_FILL
+
+[node name="PlayBtn" type="Button" parent="CanvasLayer/VBoxContainer"]
+text = "Play"
+size_flags_horizontal = Control.SIZE_EXPAND_FILL
+
+[node name="RunBtn" type="Button" parent="CanvasLayer/VBoxContainer"]
+text = "Run"
+size_flags_horizontal = Control.SIZE_EXPAND_FILL
+
