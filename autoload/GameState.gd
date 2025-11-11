@@ -107,10 +107,11 @@ func _build_ui_click_sample() -> AudioStreamSample:
     data.resize(length * 2)
     for i in range(length):
         var t := float(i) / float(sample.mix_rate)
-        var freq := 800.0 + t * 400.0
-        var amp := clamp(1.0 - t * 4.0, 0.0, 1.0)
+        var normalized_t := clamp(t / duration, 0.0, 1.0)
+        var freq := lerp(800.0, 1200.0, normalized_t)
+        var amp := max(1.0 - normalized_t, 0.0)
         var value := sin(TAU * freq * t) * amp
-        var int_val := int(value * 32767.0)
+        var int_val := int(clamp(value, -1.0, 1.0) * 32767.0)
         data[i * 2] = int_val & 0xFF
         data[i * 2 + 1] = (int_val >> 8) & 0xFF
     sample.data = data
