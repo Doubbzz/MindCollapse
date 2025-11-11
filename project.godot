@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format: https://docs.godotengine.org/en/latest/tutorials/misc/godot_configuration_files.html
+
+[application]
+config/name="Mental Breakdown — Chapter 1"
+config/description="A short atmospheric vignette of a mind on the brink."
+run/main_scene="res://scenes/MainMenu.tscn"
+config/features=PackedStringArray("4.0")
+config/icon="res://icon.svg"
+
+[autoload]
+GameState="*res://autoload/GameState.gd"
+
+[display]
+window/size/width=1280
+window/size/height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[editor]
+export/filter="all"
+
+[input]
+ui_accept={"deadzone":0.5,"events":[{"physical_keycode":4194326},{"physical_keycode":32},{"button_index":1,"device":-1,"deadzone":0.5,"type":"joy_button"}]}
+ui_cancel={"deadzone":0.5,"events":[{"physical_keycode":4194329},{"physical_keycode":27},{"button_index":2,"device":-1,"deadzone":0.5,"type":"joy_button"}]}
+ui_up={"deadzone":0.5,"events":[{"physical_keycode":4194320},{"physical_keycode":87}]}
+ui_down={"deadzone":0.5,"events":[{"physical_keycode":4194322},{"physical_keycode":83}]}
+ui_left={"deadzone":0.5,"events":[{"physical_keycode":4194319},{"physical_keycode":65}]}
+ui_right={"deadzone":0.5,"events":[{"physical_keycode":4194321},{"physical_keycode":68}]}
+
+[physics]
+common/enable_pause_aware_picking=true
+
+[rendering]
+environment/default_environment="res://default_env.tres"

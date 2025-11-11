@@ -1,0 +1,6 @@
+[gd_resource type="Environment" format=3]
+
+[resource]
+background_mode = 2
+background_color = Color(0.027451, 0.027451, 0.035294, 1)
+tonal_adapt = true
